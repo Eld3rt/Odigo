@@ -1,0 +1,177 @@
+//main: ../style.less
+
+.places {
+	margin-bottom: 85px;
+}
+
+.places__caption {
+	margin-bottom: 55px;
+}
+
+.places__cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 55px;
+}
+
+.places__card {
+	grid-column: span 1;
+}
+
+.places__card-pic {
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.places__card-stats {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	width: 100%;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 15px 25px;
+	background: rgba(21, 24, 36, 0.6);
+}
+
+.places__card-title {
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 1.3333;
+	color: @white;
+	text-decoration: none;
+	margin: 0 auto 0 0;
+}
+
+.places__card-likes, .places__card-comments {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	text-decoration: none;
+	color: @white;
+}
+
+.places__card-likes {
+	margin-right: 15px;
+	&:hover .places__card-likes-ico {
+		opacity: .75;
+	}
+}
+
+.places__card-comments {
+	&:hover .places__card-comments-ico {
+		opacity: .75;
+	}
+}
+
+.places__card-likes-count {
+	margin-right: 5px;
+}
+
+.places__card-comments-count {
+	margin-right: 10px;
+}
+
+.places__card-likes-ico, .places__card-comments-ico {
+	display: block;
+	fill: @white;
+	transition: all .2s linear;
+}
+
+.places__card-likes-ico {
+	width: 16px;
+	height: 15px;
+}
+
+.places__card-comments-ico {
+	width: 14px;
+	height: 14px;
+}
+
+.places__card-desc {
+	margin-bottom: 30px;
+}
+
+.places__card-btn {
+	display: inline-block;
+	line-height: 1.1875;
+	color: @white;
+	padding: 10px 20px;
+	background: #006DFE;
+	text-decoration: none;
+	transition: all .2s linear;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: #0355c3;
+	}
+}
+
+@media @w913 {
+
+	.places__caption {
+		margin-bottom: 25px;
+	}
+
+	.places__cards {
+		gap: 25px 10px;
+	}
+
+	.places__card-pic {
+		margin-bottom: 30px;
+	}
+
+	.places__card-stats {
+		padding: 15px 10px;
+	}
+}
+
+@media @w767 {
+	
+	.places__cards {
+		grid-template-columns: repeat(6, 1fr);
+		gap: 25px;
+	}
+
+	.places__card {
+		grid-column: span 3;
+	}
+
+	.places__card-stats {
+		padding: 15px 25px;
+	}
+}
+
+@media @w739 {
+	
+	.places {
+		margin-bottom: 70px;
+	}
+}
+
+@media @w612 {
+	
+	.places__cards {
+		gap: 25px 10px;
+	}
+
+	.places__card-stats {
+		padding: 15px 10px;
+	}
+}
+
+@media @w493 {
+
+	.places__card {
+		grid-column: span 6;
+	}
+
+	.places__card-thumb {
+		display: block;
+		object-fit: cover;
+		width: 100%;
+	}
+}

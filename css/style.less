@@ -1,0 +1,107 @@
+//sourceMap: true
+
+@import "fonts";
+@import "vars";
+@import "reset";
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.5;
+	color: @dark-blue;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.wrapper {
+	max-width: 1280px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.arrow__link {
+	text-decoration: none;
+	color: @blue;
+	padding-right: 60px;
+	background: url("@{svg}arrow-right.svg") no-repeat 95% center;
+	transition: all .2s linear;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: url("@{svg}arrow-right.svg") no-repeat right center;
+	}
+}
+
+.section__title {
+	font-weight: 700;
+	font-size: 2.1875rem;
+	line-height: 1.2;
+	color: @dark-blue;
+
+	&-border {
+		position: relative;
+		padding-bottom: 10px;
+		margin: 0 15px 15px 0;
+
+		&::after {
+			display: block;
+			content: '';
+			width: 250px;
+			height: 3px;
+			background-color: #006DFE;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+.resize-animation-stopper *, .resize-animation-stopper {
+animation: none !important;
+transition: none !important;
+}
+
+@media @w739 {
+
+	.section__title--trips {
+		width: 100%;
+		margin: 0 0 30px  0;
+	}
+}
+
+@media @w493 {
+
+	.section__title {
+		font-size: 1.4rem;
+
+		&::after {
+			width: 150px;
+		}
+	}
+}
+
+// Blocks
+@import "blocks/header";
+@import "blocks/intro";
+@import "blocks/benefits";
+@import "blocks/trips";
+@import "blocks/tours";
+@import "blocks/places";
+@import "blocks/video";
+@import "blocks/footer";

@@ -1,0 +1,105 @@
+//main: ../style.less
+
+.trips {
+	margin-bottom: 130px;
+}
+
+.trips__caption {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.trips__cards {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 10px;
+}
+
+.trips__cards-link {
+
+	&--lg {
+		grid-column: span 3;
+	}
+
+	&--sm {
+		grid-column: span 2;
+	}
+
+	&:hover .trips__card-pic {
+		transform: scale(1.05);
+	}
+}
+
+.trips__card {
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+	width: 100%;
+	height: 100%;
+
+	&::after {
+		position: absolute;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-color: rgba(21, 24, 36, 0.4);
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+}
+
+.trips__card-pic {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: all .2s linear;
+}
+
+.trips__card-title {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-weight: 900;
+	font-size: 3.125rem;
+	line-height: 1.2;
+	color: @white;
+	padding: 0 30px 25px 30px;
+	z-index: 3;
+}
+
+@media @w739 {
+
+	.trips {
+		margin-bottom: 70px;
+	}
+	
+	.trips__cards-link--first {
+		grid-column: span 6;
+	}
+
+	.trips__cards-link--second, .trips__cards-link--sm {
+		grid-column: span 3;
+	}
+}
+
+@media @w493 {
+
+	.trips__cards-link {
+		grid-column: span 6;
+	}
+
+	.trips__card {
+		max-height: 233px;
+	}
+
+	.trips__card-title {
+		font-weight: 400;
+		font-size: 2.5rem;
+	}
+}
